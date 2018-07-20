@@ -4,10 +4,10 @@
 
 import { FETCH_DATA } from '../actions';
 
-export default (state = {}, action) => {
+export default (state = {message: null}, action) => {
     switch(action.type) {
         case FETCH_DATA:
-            return action.payload;
+            return {message: action.payload};
         default:
             return state;
     }

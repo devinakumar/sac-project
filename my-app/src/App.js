@@ -9,17 +9,19 @@ class App extends Component {
 /* eslint-disable no-console */
 
 
-
   componentDidMount() {
     // call default function to display redux operation
     this.props.defaultFunction();
 
   }
 
+  checkIfWorking() {
+    console.log(this.props.default)
+  }
   render() {
     return (
       <div>
-
+        {this.checkIfWorking()}
       </div>
     );
   }
@@ -28,7 +30,7 @@ class App extends Component {
 // function to convert the global state obtained from redux to local props
 function mapStateToProps(state) {
   return {
-    default: state.default.payload
+    default: state.default.message
   };
 }
 
